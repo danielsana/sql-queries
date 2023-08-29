@@ -1,0 +1,40 @@
+Where
+SELECT * FROM `employees` WHERE `department` = "Human resource";
+
+SELECT * FROM `employees` WHERE `department` ="Music" and `name`="Ian";
+
+SELECT * FROM `employees` WHERE `department` ="Music" or department= "Information Technology"
+
+LIMIT
+SELECT * FROM `employees` WHERE `department` ="Music" or department= "Information Technology" LIMIT 2
+
+ORDER BY
+SELECT * FROM `employees` WHERE `department` ="Music" or department= "Information Technology" ORDER BY `emp_id` DESC
+
+NOT
+SELECT * FROM `employees` WHERE NOT department ="Human Resource"
+
+
+OR and AND
+SELECT * FROM `employees` WHERE  department ="Human Resource" and (`emp_id` >4 or `emp_id`=3);
+
+UPDATE
+update employees set department="Education" where department ="Human Resource";
+
+update employees set department="Finance",email="new@gmail.com" where department ="Information Technology";
+
+update employees set name="Faith" where department ="Finance" and name="Moureen"
+
+drop table
+DROP TABLE employees
+
+create a table
+CREATE TABLE users (name text(30), email varchar(30) primary key,course text(30),university text(30));
+
+ALter
+ALTER TABLE users ADD age int(30);
+
+foreign key
+CREATE TABLE users (order_id text(30) primary key, user_id int(30), CONSTRAINT user_id FOREIGN key (user_id) REFERENCES employees(user_id), order_name text(30),destination text(30));
+
+CREATE TABLE products(product_id int(50) primary key,vendor_id int(50),product_name text(50),product_desc text(50),product_cost varchar(50),product_discount varchar(50),product_category text(50),product_brand varchar(50),image_url varchar(50),date_added timestamp NOT NULL DEFAULT current_timestamp(), CONSTRAINT vendor_id FOREIGN KEY (vendor_id) REFERENCES vendors(vendor_id))
